@@ -17,7 +17,7 @@ tested MCP tools for Codex and other compatible clients.
   <a href="https://github.com/happy520ai/unified-ai-system/actions/workflows/ci.yml">
     <img alt="CI" src="https://github.com/happy520ai/unified-ai-system/actions/workflows/ci.yml/badge.svg?branch=master" />
   </a>
-  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.3.2">
+  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.3.3">
     <img alt="Official MCP Registry" src="https://img.shields.io/badge/Official_MCP_Registry-active-1f883d" />
   </a>
   <a href="https://github.com/happy520ai/unified-ai-system/blob/master/LICENSE">
@@ -36,13 +36,13 @@ tested MCP tools for Codex and other compatible clients.
 ### Try The Gateway
 
 ```bash
-docker run --rm ghcr.io/happy520ai/unified-ai-system/ai-gateway-service:0.3.2 pnpm gateway demo
+docker run --rm ghcr.io/happy520ai/unified-ai-system/ai-gateway-service:0.3.3 pnpm gateway demo
 ```
 
 ### Connect Codex Through MCP
 
 ```bash
-codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified-ai-system/mcp-server:0.3.2
+codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified-ai-system/mcp-server:0.3.3
 ```
 
 - Deterministic, credential-free fake provider for the default first run.
@@ -57,7 +57,7 @@ codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified
   ·
   <a href="https://github.com/happy520ai/unified-ai-system/blob/master/docs/codex-mcp-quickstart.md">60-second Codex guide</a>
   ·
-  <a href="https://github.com/happy520ai/unified-ai-system/releases/tag/v0.3.2">v0.3.2</a>
+  <a href="https://github.com/happy520ai/unified-ai-system/releases/tag/v0.3.3">v0.3.3</a>
   ·
   <a href="https://github.com/happy520ai/unified-ai-system/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22">Contribute</a>
 </p>
