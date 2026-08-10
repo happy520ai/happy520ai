@@ -1,76 +1,83 @@
-# Building Open AI Infrastructure
+# Jiongjiong Chen | Open-Source AI Infrastructure
 
-Open, terminal-first infrastructure for models, agents, knowledge, and tools,
+I build terminal-first infrastructure for models, agents, knowledge, and tools,
 with explicit human control at every real-provider boundary.
 
-正在构建开放、终端优先、可治理，并始终由人掌握最终控制权的 AI 基础设施。
+陈炯炯，正在构建开放、终端优先、可治理，并始终由人掌握最终控制权的 AI 基础设施。
 
-## Unified AI System
+## Featured Project: Unified AI System
 
-[Unified AI System](https://github.com/happy520ai/unified-ai-system) turns rough
-natural-language requests into structured work through a self-hosted AI gateway,
-terminal CLI, HTTP API, shared SDK, and nine tested MCP tools for Codex and other
-compatible clients.
-
-**No account. No API key. One Docker command.**
+[Unified AI System](https://github.com/happy520ai/unified-ai-system) is an
+Apache-2.0 self-hosted AI gateway and MCP server for Codex, Cursor, Cline, CLI,
+HTTP, and SDK workflows. It turns rough natural-language requests into
+structured, reviewable prompts before execution.
 
 <p>
-  <a href="https://github.com/happy520ai/unified-ai-system/actions/workflows/ci.yml">
-    <img alt="CI" src="https://github.com/happy520ai/unified-ai-system/actions/workflows/ci.yml/badge.svg?branch=master" />
+  <a href="https://github.com/happy520ai/unified-ai-system">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/happy520ai/unified-ai-system?style=flat-square&amp;label=Stars" />
   </a>
-  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.4.0">
-    <img alt="Official MCP Registry" src="https://img.shields.io/badge/Official_MCP_Registry-active-1f883d" />
+  <a href="https://github.com/happy520ai/unified-ai-system/actions/workflows/ci.yml">
+    <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/happy520ai/unified-ai-system/ci.yml?branch=master&amp;style=flat-square&amp;label=CI" />
+  </a>
+  <a href="https://github.com/happy520ai/unified-ai-system/releases/latest">
+    <img alt="Latest release" src="https://img.shields.io/github/v/release/happy520ai/unified-ai-system?style=flat-square" />
+  </a>
+  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.4.8">
+    <img alt="Official MCP Registry: active" src="https://img.shields.io/badge/Official_MCP_Registry-active-1f883d?style=flat-square" />
   </a>
   <a href="https://github.com/happy520ai/unified-ai-system/blob/master/LICENSE">
-    <img alt="Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue" />
+    <img alt="Apache-2.0 license" src="https://img.shields.io/github/license/happy520ai/unified-ai-system?style=flat-square" />
   </a>
 </p>
 
-<a href="https://github.com/happy520ai/unified-ai-system">
+<a href="https://happy520ai.github.io/unified-ai-system/#enhance?prompt=Build+a+small+API+for+my+team&amp;profile=coding&amp;language=en">
   <img
-    src="https://raw.githubusercontent.com/happy520ai/unified-ai-system/master/docs/assets/terminal-demo.png"
-    alt="Unified AI System credential-free terminal demo"
+    src="https://raw.githubusercontent.com/happy520ai/unified-ai-system/master/docs/assets/prompt-enhancement-demo.png"
+    alt="Unified AI System turns a rough request into a structured coding prompt"
     width="100%"
   />
 </a>
 
-### Try The Gateway
+### Try It Without Installing
+
+[Open a ready-to-run prompt-enhancement example](https://happy520ai.github.io/unified-ai-system/#enhance?prompt=Build+a+small+API+for+my+team&profile=coding&language=en).
+It runs locally in the browser with no account, API key, or provider call.
+
+Verify the published container with visible evidence:
 
 ```bash
-docker run --rm ghcr.io/happy520ai/unified-ai-system/ai-gateway-service:0.4.0 pnpm gateway demo
+docker run --rm ghcr.io/happy520ai/unified-ai-system/ai-gateway-service:0.4.8 pnpm gateway demo "Build a small API for my team" --enhance --profile coding --evidence
 ```
 
-### Install The Codex Plugin
+### Why It Matters
+
+- Plain-language requests become inspectable execution, output, and completion requirements.
+- Nine governed MCP tools expose prompt enhancement, health, readiness, local chat, knowledge, workflows, and workforce status.
+- The credential-free fake provider is the default; real-provider calls require explicit enablement and authorization.
+- Public CI verifies source checks, tests, containers, MCP discovery, clean-clone startup, and process cleanup.
+
+### Use It With Codex
+
+Install the repository plugin:
 
 ```bash
 codex plugin marketplace add happy520ai/unified-ai-system --ref master
 ```
 
-### Connect Codex Through MCP
+Or connect the pinned MCP container:
 
 ```bash
-codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified-ai-system/mcp-server:0.4.0
+codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified-ai-system/mcp-server:0.4.8
 ```
 
-- Deterministic, credential-free fake provider for the default first run.
-- Terminal commands for demo, prompt enhancement, serve, status, chat, and diagnostics.
-- Nine MCP tools covering provider-free prompt enhancement, readiness, local
-  chat, knowledge, workflows, and workforce status.
-- Real-provider chat fails closed without explicit command authorization.
-- Public multi-architecture containers, Linux CI, and clean-clone verification.
+[Project site](https://happy520ai.github.io/unified-ai-system/) |
+[60-second Codex guide](https://happy520ai.github.io/unified-ai-system/codex-mcp-docker-quickstart.html) |
+[Release v0.4.8](https://github.com/happy520ai/unified-ai-system/releases/tag/v0.4.8) |
+[Good first issues](https://github.com/happy520ai/unified-ai-system/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
-<p>
-  <a href="https://github.com/happy520ai/unified-ai-system"><strong>Explore the project</strong></a>
-  ·
-  <a href="https://github.com/happy520ai/unified-ai-system/blob/master/docs/codex-mcp-quickstart.md">60-second Codex guide</a>
-  ·
-  <a href="https://github.com/happy520ai/unified-ai-system/releases/tag/v0.4.0">v0.4.0</a>
-  ·
-  <a href="https://github.com/happy520ai/unified-ai-system/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22">Contribute</a>
-</p>
+If the project saves setup time or gives an agent workflow a safer gateway,
+[star the repository](https://github.com/happy520ai/unified-ai-system)
+so more developers can discover and verify it.
 
-If the project saves you setup time or gives your agents a safer gateway,
-consider giving it a star. It helps more developers find the work.
-
-Public preview. Production readiness, L5 autonomy, and AGI require independent
-evidence beyond repository tests.
+Unified AI System is an engineering preview. Production readiness, L5 autonomy,
+and AGI are not claimed without independent evidence.
