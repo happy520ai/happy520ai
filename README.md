@@ -24,7 +24,7 @@ chat-native Prometheus/Langfuse observability.
   <a href="https://github.com/happy520ai/unified-ai-system/releases/latest">
     <img alt="Latest release" src="https://img.shields.io/github/v/release/happy520ai/unified-ai-system?style=flat-square" />
   </a>
-  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.4.9">
+  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.5.0">
     <img alt="Official MCP Registry: active" src="https://img.shields.io/badge/Official_MCP_Registry-active-1f883d?style=flat-square" />
   </a>
   <a href="https://github.com/happy520ai/unified-ai-system/blob/master/LICENSE">
