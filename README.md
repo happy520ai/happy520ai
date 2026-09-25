@@ -10,7 +10,7 @@ with explicit human control at every real-provider boundary.
 [Unified AI System](https://github.com/happy520ai/unified-ai-system) is an
 Apache-2.0 **self-hosted AI gateway** for OpenAI-compatible SDKs, MCP, A2A,
 CLI, and HTTP workflows — with the feature set you'd expect from a commercial
-LLM gateway: virtual keys with token budgets, exact + semantic response caching,
+LLM gateway: virtual keys with token budgets, exact plus lexical-approximate response caching,
 reverse MCP governance (any OpenAPI 3 spec becomes governed MCP tools), and
 chat-native Prometheus/Langfuse observability.
 
@@ -24,7 +24,7 @@ chat-native Prometheus/Langfuse observability.
   <a href="https://github.com/happy520ai/unified-ai-system/releases/latest">
     <img alt="Latest release" src="https://img.shields.io/github/v/release/happy520ai/unified-ai-system?style=flat-square" />
   </a>
-  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.5.0">
+  <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.happy520ai%2Funified-ai-system/versions/0.7.0">
     <img alt="Official MCP Registry: active" src="https://img.shields.io/badge/Official_MCP_Registry-active-1f883d?style=flat-square" />
   </a>
   <a href="https://github.com/happy520ai/unified-ai-system/blob/master/LICENSE">
@@ -48,7 +48,7 @@ It runs locally in the browser with no account, API key, or provider call.
 Or run the full gateway in 60 seconds — no clone, no credentials:
 
 ```bash
-docker run --rm ghcr.io/happy520ai/unified-ai-system/ai-gateway-service:0.5.0 pnpm gateway demo "Build a small API for my team" --enhance --profile coding
+docker run --rm ghcr.io/happy520ai/unified-ai-system/ai-gateway-service:0.7.0 pnpm gateway demo "Build a small API for my team" --enhance --profile coding --evidence
 ```
 
 ### Why It Matters
@@ -56,14 +56,26 @@ docker run --rm ghcr.io/happy520ai/unified-ai-system/ai-gateway-service:0.5.0 pn
 - Virtual keys (`uai-`) with daily/monthly token budgets, per-key rate limits,
   soft-budget alerts, spend attribution, and instant revocation — consumers
   never hold provider keys.
-- Exact + semantic response cache on the chat hot path with byte-identical
-  SSE replay and per-tenant isolation.
+- Response cache on the chat hot path: byte-identical JSON/SSE replay and
+  per-tenant isolation, plus an opt-in deterministic lexical-approximate layer for
+  near-duplicate requests. Semantic-grade matching needs your own embedding
+  endpoint attached through the HTTP embedding hook.
 - Reverse MCP governance: aggregate upstream MCP servers (HTTP + stdio) behind
   one authenticated, audited, allow-listed surface; REST→MCP from any OpenAPI
   3 spec.
+- Since v0.6.0: a governed local-client intelligence gateway (tenant-scoped
+  inventory, per-client proof-of-presence, dry-run autonomous management,
+  irreversible revocation) and an opt-in agent governance control plane with
+  deterministic policies, signed state, dual fences, and cascade revocation.
+- Since v0.7.0: deterministic local guardrails (secret block, PII redaction,
+  injection warnings), a terminal-first operations overview API, OIDC SSO with
+  PKCE plus SCIM 2.0 provisioning, and PostgreSQL modes exercised by a destructive
+  recovery drill. Credential-free fixture flows are proven; real-client and
+  real-provider certification, complete HA/DR, and production RTO/RPO are not
+  claimed.
 - The credential-free fake provider is the default; real-provider calls
   require explicit three-gate enablement and authorization.
-- A repeatable 16-attack live security regression (cross-tenant cache reads,
+- A repeatable 23-attack live security regression (cross-tenant cache reads,
   tenant forgery, budget bypass...) must stay green for every release.
 
 ### Use It With Codex
@@ -77,12 +89,12 @@ codex plugin marketplace add happy520ai/unified-ai-system --ref master
 Or connect the pinned MCP container:
 
 ```bash
-codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified-ai-system/mcp-server:0.5.0
+codex mcp add unified-ai-system -- docker run --rm -i ghcr.io/happy520ai/unified-ai-system/mcp-server:0.7.0
 ```
 
 [Project site](https://happy520ai.github.io/unified-ai-system/) |
 [中文 README](https://github.com/happy520ai/unified-ai-system/blob/master/README.zh-CN.md) |
-[Release v0.5.0](https://github.com/happy520ai/unified-ai-system/releases/tag/v0.5.0) |
+[Release v0.7.0](https://github.com/happy520ai/unified-ai-system/releases/tag/v0.7.0) |
 [Good first issues](https://github.com/happy520ai/unified-ai-system/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
 If the project saves setup time or gives an agent workflow a safer gateway,
