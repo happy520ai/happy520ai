@@ -103,3 +103,15 @@ so more developers can discover and verify it.
 
 Unified AI System is an engineering preview. Production readiness, L5 autonomy,
 and AGI are not claimed without independent evidence.
+
+## Also maintained
+
+- [gateway-price-check](https://github.com/happy520ai/gateway-price-check) — a
+  zero-dependency CLI that asks one read-only question of any OpenAI-compatible
+  endpoint: **does it disclose model prices before you create an account?** Five
+  verdict tiers keep "I could not read it" separate from "it published nothing",
+  and an HTTP 401 is treated as an answer rather than a probe failure — because
+  lumping the two together systematically overstates how transparent the industry
+  is. Daily readings for five providers are committed to
+  [RESULTS.md](https://github.com/happy520ai/gateway-price-check/blob/main/RESULTS.md);
+  the measurement code is deliberately separate from the report it produces.
