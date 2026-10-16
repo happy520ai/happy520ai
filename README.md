@@ -112,6 +112,6 @@ and AGI are not claimed without independent evidence.
   verdict tiers keep "I could not read it" separate from "it published nothing",
   and an HTTP 401 is treated as an answer rather than a probe failure — because
   lumping the two together systematically overstates how transparent the industry
-  is. Daily readings for five providers are committed to
+  is. Daily readings for eleven providers are committed to
   [RESULTS.md](https://github.com/happy520ai/gateway-price-check/blob/main/RESULTS.md);
   the measurement code is deliberately separate from the report it produces.
