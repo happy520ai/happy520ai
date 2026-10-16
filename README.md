@@ -115,3 +115,6 @@ and AGI are not claimed without independent evidence.
   is. Daily readings for eleven providers are committed to
   [RESULTS.md](https://github.com/happy520ai/gateway-price-check/blob/main/RESULTS.md);
   the measurement code is deliberately separate from the report it produces.
+  Run it against your own endpoint without cloning:
+  `npx github:happy520ai/gateway-price-check --url https://your-gateway.example/v1 --name mine`
+  ([v0.1.0](https://github.com/happy520ai/gateway-price-check/releases/tag/v0.2.0)).
